@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nexus Finance | Strategic Wealth Management</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+    <style>
+        :root {
+            --primary: #0a192f;
+            --secondary: #112240;
+            --accent: #64ffda;
+            --text-main: #ccd6f6;
+            --text-dim: #8892b0;
+            --white: #ffffff;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Inter', sans-serif;
+        }
+
+        body {
+            background-color: var(--primary);
+            color: var(--text-main);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* Navigation */
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 10%;
+            background: rgba(10, 25, 47, 0.95);
+            position: fixed;
+            width: 100%;
+            z-index: 1000;
+            border-bottom: 1px solid rgba(100, 255, 218, 0.1);
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--accent);
+            text-decoration: none;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+
+        nav ul li { margin-left: 30px; }
+
+        nav ul li a {
+            text-decoration: none;
+            color: var(--text-main);
+            font-size: 0.9rem;
+            transition: 0.3s;
+        }
+
+        nav ul li a:hover { color: var(--accent); }
+
+        /* Hero Section */
+        .hero {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 0 10%;
+            background: radial-gradient(circle at center, #112240 0%, #0a192f 100%);
+        }
+
+        .hero h1 {
+            font-size: 4rem;
+            margin-bottom: 20px;
+            color: var(--white);
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            max-width: 600px;
+            color: var(--text-dim);
+            margin-bottom: 30px;
+        }
+
+        .btn {
+            padding: 15px 30px;
+            border: 1px solid var(--accent);
+            color: var(--accent);
+            text-decoration: none;
+            border-radius: 4px;
+            transition: 0.3s;
+            font-weight: 600;
+        }
+
+        .btn:hover {
+            background: rgba(100, 255, 218, 0.1);
+            transform: translateY(-3px);
+        }
+
+        /* Sections General */
+        section { padding: 100px 10%; }
+
+        h2 {
+            font-size: 2.5rem;
+            margin-bottom: 50px;
+            color: var(--white);
+            text-align: center;
+        }
+
+        /* Services Grid */
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+        }
+
+        .card {
+            background: var(--secondary);
+            padding: 40px;
+            border-radius: 8px;
+            transition: 0.4s;
+            border-bottom: 3px solid transparent;
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+            border-color: var(--accent);
+        }
+
+        .card i {
+            font-size: 2rem;
+            color: var(--accent);
+            margin-bottom: 20px;
+        }
+
+        /* Gallery */
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 15px;
+        }
+
+        .gallery-item {
+            height: 250px;
+            background: #233554;
+            border-radius: 8px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            opacity: 0.7;
+            transition: 0.5s;
+        }
+
+        .gallery-item:hover img { opacity: 1; transform: scale(1.1); }
+
+        /* Contact Section */
+        .contact-container {
+            display: flex;
+            gap: 50px;
+            flex-wrap: wrap;
+        }
+
+        .contact-info { flex: 1; min-width: 300px; }
+
+        .contact-form {
+            flex: 2;
+            min-width: 300px;
+            background: var(--secondary);
+            padding: 40px;
+            border-radius: 8px;
+        }
+
+        .contact-form input, .contact-form textarea {
+            width: 100%;
+            padding: 15px;
+            margin-bottom: 20px;
+            background: var(--primary);
+            border: 1px solid #233554;
+            color: white;
+            border-radius: 4px;
+        }
+
+        .submit-btn {
+            background: transparent;
+            color: var(--accent);
+            border: 1px solid var(--accent);
+            padding: 12px 40px;
+            cursor: pointer;
+            width: auto;
+        }
+
+        .submit-btn:hover { background: rgba(100, 255, 218, 0.1); }
+
+        footer {
+            text-align: center;
+            padding: 40px;
+            font-size: 0.8rem;
+            color: var(--text-dim);
+            border-top: 1px solid #233554;
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 2.5rem; }
+            .gallery-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <a href="#" class="logo">NEXUS FINANCE</a>
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#gallery">Gallery</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <section class="hero" id="home">
+        <h1 data-aos="fade-down">Elevating Wealth Strategy</h1>
+        <p data-aos="fade-up" data-aos-delay="200">Bespoke financial solutions for the modern investor. We turn market complexity into long-term clarity.</p>
+        <div data-aos="zoom-in" data-aos-delay="400">
+            <a href="#contact" class="btn">Start Your Journey</a>
+        </div>
+    </section>
+
+    <section id="about">
+        <h2 data-aos="fade-up">Trusted Expertise</h2>
+        <div style="max-width: 800px; margin: 0 auto; text-align: center;" data-aos="fade-up">
+            <p>Founded in 2008, Nexus Finance has managed over $4B in assets. Our philosophy is rooted in data-driven risk management and ethical growth. Our team of 40+ advisors works globally to secure your legacy.</p>
+        </div>
+    </section>
+
+    <section id="services">
+        <h2 data-aos="fade-up">Core Services</h2>
+        <div class="grid">
+            <div class="card" data-aos="flip-left">
+                <i class="fas fa-chart-line"></i>
+                <h3>Wealth Management</h3>
+                <p>Tailored portfolios designed to maximize returns while minimizing volatility.</p>
+            </div>
+            <div class="card" data-aos="flip-left" data-aos-delay="100">
+                <i class="fas fa-shield-alt"></i>
+                <h3>Risk Assessment</h3>
+                <p>Comprehensive audits to protect your capital from market fluctuations.</p>
+            </div>
+            <div class="card" data-aos="flip-left" data-aos-delay="200">
+                <i class="fas fa-landmark"></i>
+                <h3>Estate Planning</h3>
+                <p>Securing your family's future through tax-efficient wealth transfer.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="gallery">
+        <h2 data-aos="fade-up">Our Environment</h2>
+        <div class="gallery-grid">
+            <div class="gallery-item" data-aos="zoom-in"><img src="https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=500" alt="Office"></div>
+            <div class="gallery-item" data-aos="zoom-in" data-aos-delay="100"><img src="https://images.unsplash.com/photo-1507679799987-c73779587ccf?auto=format&fit=crop&w=500" alt="Business"></div>
+            <div class="gallery-item" data-aos="zoom-in" data-aos-delay="200"><img src="https://images.unsplash.com/photo-1556761175-b413da4baf72?auto=format&fit=crop&w=500" alt="Team"></div>
+        </div>
+    </section>
+
+    <section id="contact">
+        <h2 data-aos="fade-up">Get Started</h2>
+        <div class="contact-container">
+            <div class="contact-info" data-aos="fade-right">
+                <h3>Contact Details</h3>
+                <p style="margin: 20px 0;"><i class="fas fa-map-marker-alt" style="color:var(--accent)"></i> 55 Financial Plaza, Suite 200, London</p>
+                <p style="margin: 20px 0;"><i class="fas fa-phone" style="color:var(--accent)"></i> +44 20 7946 0958</p>
+                <p style="margin: 20px 0;"><i class="fas fa-envelope" style="color:var(--accent)"></i> inquiry@nexusfinance.com</p>
+            </div>
+            <div class="contact-form" data-aos="fade-left">
+                <form>
+                    <input type="text" placeholder="Full Name" required>
+                    <input type="email" placeholder="Email Address" required>
+                    <textarea rows="5" placeholder="Your Message"></textarea>
+                    <button type="submit" class="submit-btn btn">Send Inquiry</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2026 Nexus Finance Group. All Rights Reserved.</p>
+    </footer>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        // Initialize Animations
+        AOS.init({
+            duration: 1000,
+            once: true,
+            offset: 100
+        });
+
+        // Simple Form Submission Alert
+        document.querySelector('form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Thank you! Your inquiry has been sent to our team.');
+        });
+    </script>
+</body>
+</html>
